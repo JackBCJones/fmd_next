@@ -31,10 +31,10 @@ const FAQ = () => {
 
     
   return (
-    <section className='lg:w-960 lg:ml-auto lg:mr-auto lg:bg-background-1  '>
-        <div className='mt-[5rem] align-center md:m-0 md:justify-center'>
-            <h2 className='justify-center bg-primary-9 padding-[1rem] shadow-sm'>Frequently asked questions</h2>
-            <div className='sm:grid-cols-1 md:m-[1rem] grid bg-background-1 grid-cols-{25rem} justify-center gap-x-[2rem] mt-[5rem] mb-[10rem] '>
+    <section className='flex justify-center lg:w-[960px] lg:ml-auto lg:mr-auto bg-background-1'>
+        <div className=' align-center md:mt-[5rem] m-0 justify-center'>
+            <h2 className='flex justify-center bg-primary-9 p-[1rem] shadow-sm text-grey-1'>Frequently asked questions</h2>
+            <div className='grid-cols-1 m-[1rem] grid bg-background-1 md:grid-cols-2 justify-center gap-x-[2rem] md:mt-[5rem] md:mb-[10rem] '>
             {questions?.map((question) => {
                  return <FAQCard {...question}/>
             })}

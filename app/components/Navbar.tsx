@@ -28,7 +28,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className={`shadow-sm p-5 bg-white ${open ? "top-20" : "top-[-490]"}`}>
+    <nav className={`shadow-lg p-4 ${open ? "top-20" : "top-[-490]"}`}>
       <div className="md:flex md:items-center md:justify-between">
         <div className="flex justify-between items-center">
           <a href='/'>
@@ -44,7 +44,7 @@ const Navbar = () => {
           </button>
         </div>
           <ul className={`md:flex md:items-center md:pb-0 
-          pb-12 absolute md:static bg-white md:z-auto z-[-1]
+          pb-12 absolute md:static md:z-auto z-[-1]
           left-0 w-full md:w-auto md:pl-0 transition-all 
           duration-500 ease-in ${open ? 'top-20 opacity-100': 'top-[-490px]'} md:opacity-100 opacity-0 `}
           >
