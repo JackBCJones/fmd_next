@@ -1,0 +1,33 @@
+// schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Course {
+  id             Int        @id @default(autoincrement())
+  title          String
+  requirements   String?
+  link           String  
+  createdAt      DateTime   @default(now()) @map(name: "created_at")
+  updatedAt      DateTime   @updatedAt @map(name: "updated_at")
+  owner          Uni       @relation(fields: [ownerId], references: [id])
+  ownerId        Int
+}
+
+model Uni {
+  id            Int      @id @default(autoincrement())
+  name          String?      @unique
+  img           String
+  color         String       @default("white")
+  text_color    String       @default("black")
+  nickname      String
+  createdAt     DateTime     @default(now()) @map(name: "created_at")
+  updatedAt     DateTime     @updatedAt @map(name: "updated_at")
+  courses       Course[]
+  @@map(name: "unis")
+}
