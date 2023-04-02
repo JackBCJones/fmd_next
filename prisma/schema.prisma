@@ -20,14 +20,14 @@ model Course {
 }
 
 model Uni {
-  id            Int      @id @default(autoincrement())
+  id            Int          @id @default(autoincrement())
   name          String?      @unique
   img           String
   color         String       @default("white")
   text_color    String       @default("black")
   nickname      String
   createdAt     DateTime     @default(now()) @map(name: "created_at")
-  updatedAt     DateTime     @updatedAt @map(name: "updated_at")
+  updatedAt     DateTime     @default(now()) @updatedAt @map(name: "updated_at")
   courses       Course[]
   @@map(name: "unis")
 }
